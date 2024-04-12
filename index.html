@@ -28,6 +28,7 @@
 			let searchParams = new URLSearchParams(window.location.search);
 			var new_url = "http://49.235.151.78?id=" + searchParams.get('id');
 			window.onload = function () {
+				console.log(ua + '\nresult: ' + ua.match(/MicroMessenger\/[0-9]/i) + '\nresult: ' + ua.match(/QQ\/[0-9]/i));
 				if(ua.match(/MicroMessenger\/[0-9]/i) || ua.match(/QQ\/[0-9]/i)) {
 					curFrame.src = new_url;
 				}
