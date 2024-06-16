@@ -26,7 +26,14 @@
 			let curFrame = document.getElementById('frame');
 			var ua = navigator.userAgent.toLowerCase();
 			let searchParams = new URLSearchParams(window.location.search);
-			var new_url = "http://49.235.151.78?id=" + searchParams.get('id');
+			var base_url = "";
+			if (searchParams.get('video') === null) {
+				base_url = "http://49.235.151.78";
+			}
+			else {
+				base_url = "http://49.235.151.78/index_video.html";
+			}
+			var new_url = base_url + "?id=" + searchParams.get('id');
 			window.onload = function () {
 				if(ua.match(/MicroMessenger\/[0-9]/i) || ua.match(/QQ\/[0-9]/i)) {
 					curFrame.src = new_url;
